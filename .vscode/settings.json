@@ -1,6 +1,7 @@
 {
-  "liveServer.settings.fullReload": true,
-  "liveServer.settings.useBrowserPreview": true,
-  "liveServer.settings.useWebExt": true,
-  "liveServer.settings.useLocalIp": true
+	"liveServer.settings.fullReload": true,
+	"liveServer.settings.useBrowserPreview": true,
+	"liveServer.settings.useWebExt": true,
+	"html.format.wrapAttributes": "force-aligned",
+	"liveServer.settings.useLocalIp": true
 }

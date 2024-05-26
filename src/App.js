@@ -1,82 +1,28 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import StartPage from "./component/pages/StartPage";
+import { Route, Routes } from "react-router";
+import LoginPage from "./component/pages/LoginPage";
+import ExamPage from "./component/pages/ExamPage";
+import ReviewPage from "./component/pages/ReviewPage";
+import useHttps from "./component/use-https";
+import { useGlobalContext } from "./component/Context";
+import { useEffect } from "react";
 
-import MoviesList from "./components/MoviesList";
-import "./App.css";
-import DetailPage from "./components/pages/DetailPage";
-
-function App() {
-	const [movies, setMovies] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState(null);
-
-	const fetchMoviesHandler = useCallback(async () => {
-		setIsLoading(true);
-		setError(null);
-		try {
-			const response = await fetch("https://api.tvmaze.com/search/shows?q=all");
-
-			if (!response.ok) {
-				throw new Error("Something went wrong!");
-			}
-
-			const data = await response.json();
-
-			const loadedMovies = [];
-
-			console.log(data);
-			for (const key in data) {
-				loadedMovies.push({
-					id: key,
-					title: data[key].show["name"],
-					openingText: data[key].show["summary"],
-					image: data[key].show.image["original"],
-					language: data[key].show["language"],
-				});
-			}
-
-			setMovies(loadedMovies);
-		} catch (error) {
-			setError(error.message);
-		}
-		setIsLoading(false);
-	}, []);
-
-	useEffect(() => {
-		fetchMoviesHandler();
-	}, [fetchMoviesHandler]);
-
-	let content = <p>Found no movies.</p>;
-	let content2 = <p>Found no movies.</p>;
-
-	if (movies.length > 0) {
-		content = <MoviesList movies={movies} />;
-		content2 = <DetailPage movies={movies} />;
-	}
-
-	if (error) {
-		content = <p>{error}</p>;
-	}
-
-	if (isLoading) {
-		content = <p>Loading...</p>;
-	}
+const App = () => {
+	const { questionChioce } = useGlobalContext();
+	const { loading, waiting, error } = useHttps();
 
 	return (
-		<React.Fragment>
-			<Link to="/movie" className="btn">
-				<button onClick={fetchMoviesHandler}>Fetch All Movies</button>
-			</Link>
-			<Switch>
-				<Route path="/movie" exact>
-					<section>{content}</section>
-				</Route>
-				<Route path="/movie/:id">
-					<section>{content2}</section>
-				</Route>
-			</Switch>
-		</React.Fragment>
+		<Routes>
+			{/* {waiting && <Route element={<StartPage loading={loading} />} path="/" />}
+			{!waiting && <Route element={<LoginPage />} path="/login" />}
+			{!waiting && <Route element={<ExamPage />} path="/exam" />}
+			{!waiting && <Route element={<ReviewPage />} path="/review" />} */}
+			<Route element={<StartPage loading={loading} />} path="/" />
+			<Route element={<LoginPage />} path="/login" />
+			<Route element={<ExamPage />} path="/exam" />
+			<Route element={<ReviewPage />} path="/review" />
+		</Routes>
 	);
-}
+};
 
 export default App;
