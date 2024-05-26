@@ -43,6 +43,8 @@ const questionReducer = (state, action) => {
 	if (action.type === "SETMOMENT") {
 		return { ...state, moment: action.moment };
 	}
+
+	return state;
 };
 
 export default questionReducer;
