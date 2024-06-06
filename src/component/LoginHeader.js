@@ -11,7 +11,7 @@ const LoginHeader = () => {
 				<div className="sac-div"></div>
 			</div>
 			<div className="logo-cont">
-				<img src={logo} alt="logo" />
+				<img src={logo} alt="logo" className="logo-img" />
 			</div>
 		</nav>
 	);

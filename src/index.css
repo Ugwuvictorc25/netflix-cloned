@@ -562,6 +562,13 @@
 	justify-content: space-between;
 }
 
+.logo-img {
+	height: 85px;
+	width: 100px;
+	position: absolute;
+	top: 0px;
+}
+
 .login-container .login-nav .nav-head {
 	background-color: var(--main-blue);
 	display: flex;
@@ -595,7 +602,7 @@
 
 .login-container .login-nav .logo-cont {
 	flex: 30;
-	margin-right: 4rem;
+	/* margin-right: 4rem; */
 	display: flex;
 	justify-content: flex-end;
 }
@@ -618,7 +625,7 @@
 	}
 }
 
-.login-container .login-nav .logo-cont img {
+exam-info-content .login-container .login-nav .logo-cont img {
 	display: block;
 	height: 100px;
 	width: 100px;
@@ -629,6 +636,7 @@
 	width: 80%;
 	margin: 0 auto;
 	margin-top: 4rem;
+	margin-bottom: 0rem;
 }
 
 .login-container .main .main-links {
@@ -745,6 +753,7 @@
 	flex-direction: column;
 	gap: 0.85rem;
 	align-items: flex-start;
+	margin: 0 auto 5rem auto;
 }
 
 .login-container .main .aside-info-content img {
@@ -838,7 +847,7 @@
 
 	.login-container .main .exam-info-content {
 		display: block;
-		margin: 0 auto;
+		margin: 0 auto 5rem auto;
 	}
 
 	.main .main-content .exam-datail-content .foot {
@@ -1144,6 +1153,7 @@
 	align-items: center;
 	border: solid 1px gainsboro;
 	padding: 0.5rem;
+	margin-bottom: 5rem;
 }
 
 .review-page-cont .review-main .btn-cont button {
