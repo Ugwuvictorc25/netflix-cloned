@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router";
-import { useGlobalContext } from "./Context";
 
 const Instruction = ({ resetLoginTimeYear }) => {
 	const navigation = useNavigate();
-	
 
 	const continueHandler = () => {
 		navigation("/exam");

@@ -7,11 +7,11 @@ import Loading from "./Loading";
 import useHttp from "./use-https";
 
 const SecondAlert = ({ showForms, setShowFormAlert, setShowform }) => {
-	const { addUser, addExamInfo, questionChioce } = useGlobalContext();
+	const { addUser, addExamInfo } = useGlobalContext();
 
-	const { value: enteredName, hasError: nameError, valueChangeHandler: nameChangeHandler, inputBlurHandler: nameBlurHandler, isValid: nameIsvalid, reset: nameReset } = useInput((value) => value.trim() !== "");
-	const { value: emailValue, hasError: emailError, valueChangeHandler: emailChangeHandler, inputBlurHandler: emailBlureHandler, reset: emailReset, isValid: emailIsValid } = useInput((value) => value.trim().includes("@"));
-	const { value: regValue, hasError: regError, valueChangeHandler: regChangeHandler, inputBlurHandler: regBlurHandler, isValid: regIsValid, reset: regReset } = useInput((value) => value.trim().length === 5);
+	const { value: enteredName, hasError: nameError, valueChangeHandler: nameChangeHandler, inputBlurHandler: nameBlurHandler, isValid: nameIsvalid } = useInput((value) => value.trim() !== "");
+	const { value: emailValue, hasError: emailError, valueChangeHandler: emailChangeHandler, inputBlurHandler: emailBlureHandler, isValid: emailIsValid } = useInput((value) => value.trim().includes("@"));
+	const { value: regValue, hasError: regError, valueChangeHandler: regChangeHandler, inputBlurHandler: regBlurHandler, isValid: regIsValid } = useInput((value) => value.trim().length === 5);
 	const formOneIsValid = nameIsvalid && emailIsValid && regIsValid;
 
 	const { value: numberValue, hasError: numberError, valueChangeHandler: numberChangeHandler, inputBlurHandler: numberBlurHandler, isValid: numberIsValid } = useInput((value) => +value > 0);
@@ -24,7 +24,6 @@ const SecondAlert = ({ showForms, setShowFormAlert, setShowform }) => {
 		politics: 24,
 	};
 	const url = `https://opentdb.com/api.php?amount=${numberValue}&category=${table[categoryValue]}&difficulty=${deficultyValue}`;
-	// const url = "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple";
 	const {
 		fetchHttps,
 		loading,

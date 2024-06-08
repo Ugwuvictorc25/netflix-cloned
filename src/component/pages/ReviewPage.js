@@ -22,6 +22,7 @@ const ReviewPage = () => {
 	const year = new Date().getFullYear();
 	const date = new Date().getDate();
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		scoreSummation();
 	}, []);

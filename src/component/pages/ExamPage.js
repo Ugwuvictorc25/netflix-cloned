@@ -27,7 +27,7 @@ const ExamPage = () => {
 				shadeOption(id, item[1]);
 			}
 		});
-	}, [alph]);
+	}, [alph, shadeOption]);
 
 	useEffect(() => {
 		document.addEventListener("keypress", (e) => {

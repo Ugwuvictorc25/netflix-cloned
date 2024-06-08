@@ -1,5 +1,6 @@
 :root {
 	--main-blue: rgb(7, 7, 214);
+	font-size: 1rem;
 }
 
 *,
@@ -45,12 +46,12 @@
 	gap: 0.5rem;
 	border: solid 1px gainsboro;
 	width: 60vw;
-	margin: 1.5rem auto;
+	margin: 1rem auto;
 	padding: 0.5rem 1rem;
 }
 
 .button-container button {
-	padding: 0.6rem 1rem;
+	padding: 0.5rem 1rem;
 	height: 2rem;
 	width: 6%;
 	text-align: center;
@@ -458,8 +459,8 @@ submit-info-btn .modal-cont .exam-instruction {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0.5rem;
-	padding: 0.8rem 0.6rem;
+	margin: 0.3rem;
+	padding: 0.4rem 0.6rem;
 	border-radius: 10px;
 	color: white;
 }
@@ -477,7 +478,7 @@ submit-info-btn .modal-cont .exam-instruction {
 }
 
 .login .forms-container fieldset {
-	padding: 1rem 2rem;
+	padding: 0.2rem 2rem;
 	font-weight: 600;
 }
 
@@ -507,7 +508,7 @@ submit-info-btn .modal-cont .exam-instruction {
 	font-size: 1.5rem;
 	padding: 1px 5px;
 	outline: var(--main-blue);
-	height: 3rem;
+	height: 2.5rem;
 }
 
 .login .form-control select {
@@ -535,7 +536,7 @@ submit-info-btn .modal-cont .exam-instruction {
 	font-size: 1.2rem;
 	border-color: transparent;
 	cursor: pointer;
-	margin-top: 2rem;
+	margin-top: 1rem;
 	width: 100%;
 	font-weight: 500;
 	letter-spacing: 2px;
@@ -560,12 +561,13 @@ submit-info-btn .modal-cont .exam-instruction {
 	gap: 0 4rem;
 	color: white;
 	justify-content: space-between;
-	margin-bottom: 2rem;
+	margin-bottom: 1.8rem;
+	font-size: 0.8rem;
 }
 
 .logo-img {
-	height: 85px;
-	width: 100px;
+	height: 75px;
+	width: 80px;
 	position: absolute;
 	top: 0px;
 }
@@ -575,7 +577,7 @@ submit-info-btn .modal-cont .exam-instruction {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1.2rem 2rem;
+	padding: 1rem 2rem;
 	align-self: flex-start;
 	flex: 70;
 	width: 200px;
@@ -636,8 +638,8 @@ exam-info-content .login-container .login-nav .logo-cont img {
 .login-container .instruction-cont {
 	width: 80%;
 	margin: 0 auto;
-	margin-top: 4rem;
-	margin-bottom: 0rem;
+	/* margin-top: 4rem;
+	margin-bottom: 0rem; */
 }
 
 .login-container .main .main-links {
@@ -805,7 +807,7 @@ exam-info-content .login-container .login-nav .logo-cont img {
 .login-container .instruction-cont .button-cont {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 2rem;
+	margin-bottom: 4rem;
 	align-items: center;
 }
 
@@ -892,7 +894,7 @@ exam-info-content .login-container .login-nav .logo-cont img {
 	height: 8rem;
 }
 .exam-page-cont .exam-head .candidate-info {
-	font-size: 1.1rem;
+	font-size: 1rem;
 	width: 33%;
 }
 
@@ -926,14 +928,23 @@ exam-info-content .login-container .login-nav .logo-cont img {
 	align-items: center;
 	gap: 1rem;
 }
+.timer-wrapper svg {
+	height: 150px;
+	width: 150px;
+}
 
+.timer {
+	height: 100px;
+	width: 100px;
+}
 .exam-page-cont .exam-head .timer-info .button-cont button {
-	padding: 0.5rem 1rem;
+	padding: 0.3rem 1rem;
 	background-color: var(--main-blue);
 	color: white;
-	font-size: 1rem;
+	font-size: 0.7rem;
 	border: none;
 	cursor: pointer;
+	font-weight: 800;
 }
 
 .exam-page-cont .exam-head .timer-info img {
@@ -952,15 +963,16 @@ exam-info-content .login-container .login-nav .logo-cont img {
 .exam-page-cont .exam-main {
 	width: 60vw;
 	margin: 1rem auto;
-	margin-top: 3rem;
+	margin-top: 2rem;
 	padding: 0.5rem;
 	border-radius: 10px;
 	padding-bottom: 1.5rem;
 	border: 1px solid gainsboro;
+	font-size: 0.8rem;
 }
 
 .exam-page-cont .exam-main .question-index {
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.1rem;
 	color: red;
 }
 
@@ -976,7 +988,7 @@ exam-info-content .login-container .login-nav .logo-cont img {
 
 .exam-page-cont .exam-main .option {
 	border: solid var(--main-blue) 1px;
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 	display: flex;
 	gap: 2rem;
 	cursor: pointer;
@@ -991,18 +1003,19 @@ exam-info-content .login-container .login-nav .logo-cont img {
 	width: 60vw;
 	display: flex;
 	justify-content: space-around;
-	margin: 1rem auto;
+	margin: 0.8rem auto;
 	padding: 0 4rem;
 }
 
 .exam-page-cont .next-prev-btn-cont button {
 	cursor: pointer;
-	padding: 0.6rem 1.5rem;
+	padding: 0.5rem 1.5rem;
 	background-color: var(--main-blue);
 	color: white;
 	font-size: 1rem;
 	font-weight: 600;
 	border: none;
+	font-size: 0.8rem;
 }
 
 .exam-page-cont .next-prev-btn-cont button:disabled {
@@ -1015,7 +1028,7 @@ exam-info-content .login-container .login-nav .logo-cont img {
 	}
 
 	.exam-page-cont .exam-head {
-		margin-bottom: 5rem;
+		margin-bottom: 2rem;
 	}
 
 	.exam-page-cont .exam-main {

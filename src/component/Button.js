@@ -3,13 +3,10 @@ import { useGlobalContext } from "./Context";
 
 const Button = () => {
 	const { data, changeIndex, index } = useGlobalContext();
-	const [activeIndex, setActiveIndex] = useState(0);
 
 	if (data.length === 0) {
 		return;
 	}
-
-	const { touch } = data[index];
 
 	const buttonClickHandle = (idx) => {
 		changeIndex(idx);

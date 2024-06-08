@@ -1,4 +1,4 @@
-export default [
+const data = [
 	{ id: 1, question: "Where is Nigeria located", options: [{ a: "Africa", b: "America", c: "Asia" }], answer: "Africa", touch: false, selected: "" },
 	{ id: 2, question: "Where is Naka located", options: [{ a: "Lagos", b: "Benue", c: "Kogi" }], answer: "Benue", touch: false, selected: "" },
 	{ id: 3, question: "Where is Texas located", options: [{ a: "Africa", b: "America", c: "Asia" }], answer: "America", touch: false, selected: "" },
@@ -30,3 +30,5 @@ export default [
 	{ id: 29, question: "Where is Makurdi located", options: [{ a: "Lagos", b: "Benue", c: "Kogi" }], answer: "Benue", touch: false, selected: "" },
 	{ id: 30, question: "what is Makurdi located", options: [{ a: "Lagos", b: "Benue", c: "Kogi" }], answer: "Benue", touch: false, selected: "" },
 ];
+
+export default data;
