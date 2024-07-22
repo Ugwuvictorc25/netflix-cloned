@@ -1,22 +1,33 @@
-import StartPage from "./component/pages/StartPage";
 import { Route, Routes } from "react-router";
-import LoginPage from "./component/pages/LoginPage";
-import ExamPage from "./component/pages/ExamPage";
-import ReviewPage from "./component/pages/ReviewPage";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import { AuthContextProvider } from "./context/AuthContext";
+import Login from "./pages/Login";
+import Account from "./pages/Account";
+import Signup from "./pages/Signup";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-const App = () => {
+function App() {
 	return (
-		<Routes>
-			{/* {waiting && <Route element={<StartPage loading={loading} />} path="/" />}
-			{!waiting && <Route element={<LoginPage />} path="/login" />}
-			{!waiting && <Route element={<ExamPage />} path="/exam" />}
-			{!waiting && <Route element={<ReviewPage />} path="/review" />} */}
-			<Route element={<StartPage />} path="/" />
-			<Route element={<LoginPage />} path="/login" />
-			<Route element={<ExamPage />} path="/exam" />
-			<Route element={<ReviewPage />} path="/review" />
-		</Routes>
+		<>
+			<AuthContextProvider>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<Signup />} />
+					<Route
+						path="/account"
+						element={
+							<ProtectedRoute>
+								<Account />
+							</ProtectedRoute>
+						}
+					/>
+				</Routes>
+			</AuthContextProvider>
+		</>
 	);
-};
+}
 
 export default App;
