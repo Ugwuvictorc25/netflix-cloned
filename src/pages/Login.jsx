@@ -5,27 +5,24 @@ import { UserAuth } from "../context/AuthContext";
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const { logIn, error } = UserAuth();
+	const { logIn } = UserAuth();
 	const navigate = useNavigate();
-	// const [error, setError] = useState("");
+	const [error, setError] = useState("");
 
-	// const handleSubmit = async (e) => {
-	// 	e.preventDefault();
-	// 	setError("");
-
-	// 	try {
-	// 		 await logIn(email, password);
-	// 		navigate("/");
-	// 	} catch (e) {
-	// 		setError(e.message);
-	// 	}
-	// };
+	
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		await logIn(email, password);
-		navigate("/");
+		setError("");
+
+		try {
+			await logIn(email, password);
+			navigate("/");
+		} catch (error) {
+			setError(error.message);
+			console.log(error.message);
+		}
 	};
 
 	return (

@@ -3,27 +3,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
 const Signup = () => {
+	const { user } = UserAuth();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [error, setError] = useState("");
-	const { signUp } = UserAuth();
+	const { signUp, error } = UserAuth();
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		alert(error);
-		setError("");
 
-		try {
-			await signUp(email, password);
-			navigate("/");
-		} catch (e) {
-			setError(e.message);
-			console.log(e);
-			console.log(e.message);
-		}
+		await signUp(email, password);
 	};
 
+	if (user) {
+		navigate("/");
+	}
 	return (
 		<>
 			<div className="w-full h-screen">
